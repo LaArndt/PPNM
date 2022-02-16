@@ -1,0 +1,17 @@
+
+I've made a 3d-vector class vec(x,y,b)
+here are some
+u=100 200 300
+v=1 2 3
+
+by operator overloading they may be added, multiplied etc.
+u+v =101 202 303
+w=3u-v=299 598 897
+
+the class contains a method to take the dot-product
+A=2 4 6
+B=3 -6 9
+A*B=36
+
+likewise the cross-product
+AxB=72 -54 -24
