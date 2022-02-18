@@ -1,0 +1,11 @@
+value=0, square=0
+value=2, square=4
+value=4, square=16
+value=6, square=36
+value=8, square=64
+value=10, square=100
+value=12, square=144
+value=14, square=196
+value=16, square=256
+value=18, square=324
+NEW STUFF
