@@ -3,27 +3,31 @@ using static System.Math;
 using static System.Console;
 
 class main{
-	public static void Main(){
-	//Construct list manually from a to b with step dx
+	//Maketable method
+	static void make_table10(System.Func<double,double> f){
+		for(double x=0;x<=10;x+=1)WriteLine($"{x}, {f(x)} ");
+		}
+		
+	//Method for constructing table with given a,b,dx
+	static void make_table(System.Func<double,double> f, double a, double b, double dx){
+		WriteLine($"for a={a}, b={b}, dx={dx} ");
+		for double( x=a;x<=b;x+=dx)WriteLine($"{x}, {f(x)}");
+		}
 	
-	System.Func<double,double> square = delegate(double x){return x*x;};
-	int a = 0;
-	int b = 20;
-	int dx = 2;
-	double[] list = new double[b];
-	for(int i=a;i<b;i+=dx){list[i]=i;}
-       
-	for(int i=a;i<b;i+=dx){
-		WriteLine($"value={i}, square={square(i)}");
-		};	
+	
 
-	WriteLine("NEW STUFF");
-	//Try it using the make_table funktion
+	//Main execution
+	public static void Main(){
 	
-	static void make_table(System.Func<double,double> f){
-		for(double x=0;x<=10;x+=1)WriteLine($"{x}");
-		};
-	make_table(square);
+	//delegate functions	
+	System.Func<double,double> square = delegate(double x){return x*x;};
+	System.Func<double,double> sin = delegate(double x){return Sin(x);};
+	System.Func<double,double> sin2 = delegate(double x){return Sin(2*x);};
+	System.Func<double,double> sin3 = delegate(double x){return Sin(3*x);};
+
+	make_table10(square);
+	make_table10(sin);
 	}
+
 
 }
