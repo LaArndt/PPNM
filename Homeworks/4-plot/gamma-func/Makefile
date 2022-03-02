@@ -29,4 +29,4 @@ lngamma.data.txt : lngamma.exe
 	mcs $<
 
 clean:
-	rm *.exe *.png
+	rm *.exe *.png *.gpi
