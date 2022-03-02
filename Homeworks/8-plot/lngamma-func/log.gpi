@@ -1,0 +1,16 @@
+\
+set terminal pdf
+\
+set output "gamma.pdf" 
+\
+set xlabel "Re$(z)$" 
+\
+set ylabel "Im$(z)$" 
+\
+set zlabel "$|\Gamma (z)|$"
+\
+set title "Complex gamma function" 
+\
+plot 3d [-5: 5] [-5: 5] [0: 10] "gamma.data.txt" with lines title "$|\Gamma(z)|$" 
+\
+

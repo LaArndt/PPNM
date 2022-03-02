@@ -1,0 +1,12 @@
+set terminal pdf
+set output "ex_pyx.pdf"
+set size 6
+set key bottom right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$" rotate 90
+set mtics 1
+set grid
+plot [-5:5][-0.2:5]\
+ "out.ex.txt" with lines title "exp(x)"\
+,"tab.ex.txt" with points title "tab"\
