@@ -1,0 +1,10 @@
+set term png
+set out "Fig.erf.png"
+set tics out
+set xlabel "$t$"
+set key bottom
+set title "error-function"
+set axis x2 atzero
+set x2format ""
+plot \
+ "erf.data.txt" using 1:2 with lines title "erf(x)"\
