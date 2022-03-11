@@ -1,0 +1,13 @@
+set terminal pdf
+set output "interpolate.pdf"
+set size 6
+set key top right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$" rotate 90
+set mtics 1
+set grid
+plot [0:20][]\
+ "spline.txt" with lines title "lin-spline"\
+,"points.txt" with points pointtype 2 title "points"\
+,"spline.txt" with points pointtype 1 color 4 title"lin-interp"
