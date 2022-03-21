@@ -20,6 +20,19 @@ public class linspline{
 		if(z>x[mid]) i=mid; else j=mid;
 		}
 	return i;
+	}
+
+	public static double linterpInteg(double[] x, double[] y, double z){
+		double sum = 0;
+		int idx = binsearch(x,z);
+		for(int i=0;i<idx;i++){
+			double dy = y[i+1]-y[i], dx = x[i+1]-x[i];
+			double pi = dy/dx;
+			sum += y[i]*(x[i+1]-x[i])+pi*Pow(x[i+1]-x[i],2)/2;
+		}
+		double p = (y[idx]-y[idx])/(x[idx+1]-x[idx]);
+		sum += y[idx]*(z-x[idx])+p*Pow(z-x[idx],2)/2;
+		return sum;	
 }
 
 
@@ -43,7 +56,8 @@ public static void Main(){
 	double[] y = new double[]{8,6,11,15,9,5,3};
 	for(double z=x[0];z<=x[x.Length-1];z+=1){
 		double terp = linterp(x,y,z);
-		WriteLine($"{z} {terp}");
+		double integ = linterpInteg(x,y,z);
+		WriteLine($"{z} {terp} {integ}");
 		}
 	
 

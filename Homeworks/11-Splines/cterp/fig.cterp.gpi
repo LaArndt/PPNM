@@ -1,0 +1,13 @@
+set terminal pdf
+set output "interpolate.pdf"
+set key out 
+set tics out
+set xlabel "$x$"
+set ylabel "$y$"
+set title "cubic spline"
+plot\
+ "data.txt" index 1 using 1:2 with lines title "c-spline"\
+,"data.txt" index 0 using 1:2 with points smooth csplines title "gnuplot c-spline"\
+,"data.txt" index 0 using 1:2 with points pointtype 2 title "points"\
+,"data.txt" index 1 using 1:3 with lines title "deriv"\
+, "data.txt"index 1  using 1:4 with lines title "integ"\

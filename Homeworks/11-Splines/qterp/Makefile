@@ -1,17 +1,20 @@
-linterp.pdf:fig.linterp.gpi spline.txt points.txt
+qterp.pdf:fig.qterp.gpi spline.txt points.txt
 	pyxplot $<
 
-spline.txt:linterp.exe
-	mono linterp.exe > spline.txt
-
-linterp.exe:linterp.cs 
-	mcs linterp.cs
+spline.txt:qterp.exe
+	mono $< > $@
 
 points.txt:points.exe
 	mono $< > $@
 
+
+
+qterp.exe:qterp.cs
+	mcs $<
+
 points.exe:points.cs
 	mcs $<
 
+	
 clean:
 	rm *.exe *.txt *.pdf
