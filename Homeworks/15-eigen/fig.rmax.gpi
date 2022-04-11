@@ -1,0 +1,12 @@
+set terminal pdf
+set output "rmax.pdf"
+set size 6
+set key out 
+set title "Rmax-convergence"
+set tics out
+set xlabel "$r$"
+set ylabel "$E_i$" rotate 90
+plot\
+"Data.txt" index 3 using 1:2 with points title "max=10"\
+, "Data.txt" index 4 using 1:2 with points title "max=15"\
+, "Data.txt" index 5 using 1:2 with points title "max=20"\ 

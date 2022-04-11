@@ -1,0 +1,12 @@
+set terminal pdf
+set output "dr.pdf"
+set size 6
+set key out 
+set title "dr-convegence"
+set tics out
+set xlabel "$r$"
+set ylabel "$E_i$" rotate 90
+plot\
+"Data.txt" index 0 using 1:2 with points title "dr=0.5"\
+, "Data.txt" index 1 using 1:2 with points title "dr=1"\
+, "Data.txt" index 2 using 1:2 with points title "dr=2"\ 
