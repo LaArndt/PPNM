@@ -23,33 +23,33 @@ class main{
 			
 		var fit = lstsquare.lsfit(fs,Time, lnAct, lnerr);
 	
-		for(int i=0;i<Time.Length;i++){
+	/*	for(int i=0;i<Time.Length;i++){
 			WriteLine($"{Time[i]} {Act[i]} {err[i]}");};
 
 		WriteLine("\n");
 
-			
+	*/		
 		vector coeffs = fit.Item1;
 		matrix cov    = fit.Item2;
 		vector errs   = fit.Item3;
 
 		for(int i=0;i<Time.Length;i++){
-			WriteLine($"{Time[i]} {Log(Act[i])} {err[i]/Act[i]}");
+			WriteLine($"{Time[i]} {lnAct[i]} {lnerr[i]}");
 			};
 
-		WriteLine("\n Parts A&B\n\n");	
+		WriteLine("\n\n");
 		for(double i=1;i<16;i+=1.0/4){
 			WriteLine($"{i} {coeffs[0] + coeffs[1]*i}");
 			};	
-		WriteLine($"\n\nfit results");
-		WriteLine($"\nc0={coeffs[0]} c1={coeffs[1]}");
-		WriteLine($"t½={Abs(0.693/coeffs[1])} days, reference value: 3.36 days");
+		Error.WriteLine($"\n\nfit results");
+		Error.WriteLine($"\nc0={coeffs[0]} c1={coeffs[1]}");
+		Error.WriteLine($"t½={Abs(0.693/coeffs[1])} days, reference value: 3.36 days");
 
-		WriteLine($"\nuncertainty of fit:\n c0_err = {errs[0]}, c1_err = {errs[1]}");
+		Error.WriteLine($"\nuncertainty of fit:\n c0_err = {errs[0]}, c1_err = {errs[1]}");
 	
 	
 		//making badder fits//
-		WriteLine("\n Part C\n\n");
+		WriteLine("\n\n");
 		for(double i=1;i<16;i+=1.0/4){
 			WriteLine($"{i} {coeffs[0]-errs[0] + (coeffs[1]-errs[1])*i}");
 			}	

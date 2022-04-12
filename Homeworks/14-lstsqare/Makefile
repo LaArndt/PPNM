@@ -1,14 +1,14 @@
 CSC = mcs
 RUN = mono
 
-all: Out.txt lstsquare.pdf
+all: Out.txt data.txt lstsquare.pdf
 	cat Out.txt
 
 lstsquare.pdf:fig.lstsquare.gpi Out.txt Makefile
 	pyxplot $<
 
-Out.txt:main.exe
-	$(RUN) $< > $@
+Out.txt data.txt:main.exe
+	$(RUN) $< 2> Out.txt 1>data.txt
 	
 main.exe:main.cs matrix.dll QRregs.dll lstsquare.dll
 	$(CSC) -target:exe -reference:matrix.dll -reference:QRregs.dll -reference:lstsquare.dll $<

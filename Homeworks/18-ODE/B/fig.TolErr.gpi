@@ -1,0 +1,12 @@
+set terminal pdf
+set output "TolErr.pdf"
+set size 6
+set key out 
+set tics out
+set xlabel "$x_i$"
+set ylabel "$y_i$" 
+set grid
+set title "investigation. Identical to ODE at acc=eps=1e-8"
+plot\
+"data.txt" index 3 using 1:2 with lines title "y1"\
+,"data.txt" index 3 using 1:3 with lines title "y2"\

@@ -1,0 +1,3 @@
+main compiling
+driver succesfully executed
+succesfully extracted x,y

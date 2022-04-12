@@ -7,7 +7,7 @@ set xlabel "$time$"
 set ylabel "$activiy$" 
 set grid
 plot\
- "Out.txt" index 1 using 1:2:3 with errorbars title "data"\ 
-,"Out.txt" index 4 using 1:2 with lines pointtype 20 title "ls-fit"
-,"Out.txt" index 9 using 1:2 with lines pointtype 20 title "ls-fit -"
-,"Out.txt" index 10 using 1:2 with lines pointtype 20 title "ls-fit +"
+"data.txt" index 0 using 1:2:3 with errorbars title "data"\ 
+,"data.txt" index 1 using 1:2 with lines pointtype 20 title "ls-fit"\
+,"data.txt" index 2 using 1:2 with lines pointtype 20 title "ls-fit -"\
+,"data.txt" index 3 using 1:2 with lines pointtype 20 title "ls-fit +"\
