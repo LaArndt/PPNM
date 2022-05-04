@@ -38,13 +38,14 @@ class main{
 	VVt.print("\n VVt = 1");
 
 	WriteLine("\n////// Part B /////");		
+	WriteLine("testing of dr and rmax convergence can be found in \n dr.pdf and rmax.pdf respectively");
+	
 	
 	// Testing dr //
-	double[] drs = new double[]{0.5,1,2};
-	
-	for(int i=0;i<=2;i++){
-	double dr = drs[i], rmax=10;
-       	int npoints = (int)(rmax/dr)-1;
+	Error.WriteLine("#testing dr");
+	for(double dr=0.1;dr<6;dr+=0.1){
+	double  rmax=35;
+       	int npoints = (int)(rmax/dr-1);
 	vector r = new vector(npoints);
 	for(int j=0;j<npoints;j++)r[j]=dr*(j+1);
 	matrix H = new matrix(npoints,npoints);
@@ -56,21 +57,19 @@ class main{
 	H[npoints-1,npoints-1]=-2;
 	H*=-0.5/dr/dr;
 	for(int l=0;l<npoints;l++)H[l,l]+=-1/r[l];
-	
 	//hamiltonian made //
 	(matrix HD, matrix HV) = jacobi.cyclic(H);
-	for(int m=0;m<=npoints-1;m++)Error.WriteLine($"{r[m]} {HD[m,m]}");
-	Error.WriteLine("\n");	
+	Error.WriteLine($"{dr} {HD[0,0]} {HD[1,1]} {HD[2,2]}");
 	};
+	WriteLine("dr test finished");
+
 	
-	Error.WriteLine("\n\n\n");
+	Error.WriteLine("\n\n");
 	//testing rmax //
-	
-	int[] rmaxs = new int[]{10,15,20};
-	
-	for(int i=0;i<=2;i++){
+	Error.WriteLine("#testing rmax")	;
+	for(int rmax =2;rmax<=30;rmax++){	
 	double dr = 0.5;
-        int rmax=rmaxs[i] , npoints = (int)(rmax/dr)-1;
+        int npoints = (int)(rmax/dr-1);
 	vector r = new vector(npoints);
 	for(int j=0;j<npoints;j++)r[j]=dr*(j+1);
 	matrix H = new matrix(npoints,npoints);
@@ -85,12 +84,12 @@ class main{
 	
 	//hamiltonian made //
 	(matrix HD, matrix HV) = jacobi.cyclic(H);
-	for(int m=0;m<=npoints-1;m++)Error.WriteLine($"{r[m]} {HD[m,m]}");
-	Error.WriteLine("\n");	
+	for(int m=0;m<=npoints-1;m++)Error.WriteLine($"{rmax} {HD[0,0]} {HD[1,1]} {HD[2,2]}");
 	};
+	WriteLine("rmax test finished");	
 	
-	
-	Error.WriteLine("\n\n\n");
+	WriteLine("constructing/solving hamiltonian for hydrogen \n see eigen.pdf for result");
+	Error.WriteLine("\n\n\n #Hamiltonian solution");
 	
 	//Solving Hamiltonian//
 	
@@ -114,13 +113,15 @@ class main{
 		Error.WriteLine($"{R[m]} {HaV[m,0]} {HaV[m,1]} {HaV[m,2]} ");
 	//	for(int k=0;k<=3;k++)Error.Write($"{HaV[m,k]} ");
 	}
-
+	WriteLine("eigenfunctions determined");
 	Error.WriteLine("\n\n");	
 	
 
 
 	//theoretical radial wavefunctions //
 	double a0 = 1;
+	
+	Error.WriteLine("#R : an1 : an2 : an3 : an4 ");
 	Func<double,double> R10 = delegate(double r){
 		return r*2*Pow(a0,(-3/2))*Exp(-r/a0);};
 
@@ -131,7 +132,7 @@ class main{
 		return r*2/Sqrt(27)*Pow(a0,(-3/2))*(1-2*r/(3*a0)+2*r*r/(27*a0*a0))*Exp(-r/(3*a0));};
 	
 	for(int i=0;i<=Npoints-1;i+=1)Error.WriteLine($"{R[i]} {HaV[4,0]/R10(R[4])*R10(R[i])} {HaV[25,1]/R20(R[25])*R20(R[i])} {HaV[65,2]/R30(R[65])*R30(R[i])}");
-	
+	WriteLine("Comparing with analytical functions");
 	}//Main
 	
 }//class container

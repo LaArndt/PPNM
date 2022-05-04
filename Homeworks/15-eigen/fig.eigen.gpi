@@ -8,9 +8,9 @@ set ylabel "$$" rotate 90
 set grid
 set title "Eigenfunctions of S-Hydrogen"
 plot\
-"Data.txt" index 7 using 1:2 with lines linewidth 3 title "1Anal"\
-,"Data.txt" index 6 using 1:2 with lines title "1st"\
-,"Data.txt" index 7 using 1:3 with lines linewidth 3 title "2Anal"\ 
-,"Data.txt" index 6 using 1:3 with lines title "2nd"\
-,"Data.txt" index 7 using 1:4 with lines linewidth 3 title "3Anal"\
-,"Data.txt" index 6 using 1:4 with lines title "3rd"\
+"Data.txt" index 3 using 1:2 with lines linewidth 3 title "1Anal"\
+,"Data.txt" index 2 using 1:2 with lines title "1st"\
+,"Data.txt" index 3 using 1:3 with lines linewidth 3 title "2Anal"\ 
+,"Data.txt" index 2 using 1:3 with lines title "2nd"\
+,"Data.txt" index 3 using 1:4 with lines linewidth 3 title "3Anal"\
+,"Data.txt" index 2 using 1:4 with lines title "3rd"\

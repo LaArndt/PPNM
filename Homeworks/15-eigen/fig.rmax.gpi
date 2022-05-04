@@ -4,9 +4,13 @@ set size 6
 set key out 
 set title "Rmax-convergence"
 set tics out
-set xlabel "$r$"
+set xlabel "$rmax$"
 set ylabel "$E_i$" rotate 90
-plot\
-"Data.txt" index 3 using 1:2 with points title "max=10"\
-, "Data.txt" index 4 using 1:2 with points title "max=15"\
-, "Data.txt" index 5 using 1:2 with points title "max=20"\ 
+plot [] [-0.666665:3]\
+"Data.txt" index 1 using 1:2 with points title "1st"\
+, "Data.txt" index 1 using 1:3 with points title "2nd"\
+, "Data.txt" index 1 using 1:4 with points title "3rd"\ 
+,-1.0/2 with lines title "exact E0"\
+,-1.0/8 with lines title "exact E1"\
+,-1.0/18 with lines title "exact E2"\
+

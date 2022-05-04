@@ -4,9 +4,13 @@ set size 6
 set key out 
 set title "dr-convegence"
 set tics out
-set xlabel "$r$"
+set xlabel "$dr$"
 set ylabel "$E_i$" rotate 90
 plot\
-"Data.txt" index 0 using 1:2 with points title "dr=0.5"\
-, "Data.txt" index 1 using 1:2 with points title "dr=1"\
-, "Data.txt" index 2 using 1:2 with points title "dr=2"\ 
+"Data.txt" index 0 using 1:2 with points title "1st"\
+, "Data.txt" index 0 using 1:3 with points title "2nd"\
+, "Data.txt" index 0 using 1:4 with points title "3rd"\
+,-1.0/2 with lines title "exact E0"\
+,-1.0/8 with lines title "exact E1"\
+,-1.0/18 with lines title "exact E2"\
+ 

@@ -1,7 +1,7 @@
 CSC = mcs
 RUN = mono
 
-all: Out.txt Data.txt dr.pdf rmax.pdf eigen.pdf
+all: Out.txt dr.pdf rmax.pdf eigen.pdf
 	cat Out.txt
 
 Out.txt:main.exe
@@ -34,4 +34,4 @@ matrix.dll:\
 
 
 clean:
-	rm *.dll *.exe *.pdf
+	rm *.dll *.exe *.pdf *.txt

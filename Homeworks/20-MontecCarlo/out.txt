@@ -1,0 +1,6 @@
+------------Part A--------------
+Wikipieda example
+int(x[11,14],y[7,10]) x^2+4y=1341, error=0
+1858.63153257422 NaN
+Calculating singular integral [1-cos(x)cos(y)cos(z)]^-1
+integral = (Infinity, NaN)
