@@ -2,34 +2,6 @@ using System;
 using static System.Math;
 using static System.Console;
 
-public class MC{
-
-
-public static (double,double) plainMC(
-		Func<vector,double>f, //integrant function
-	       	vector a, vector b, // start(a) and end(b) points of coordinates (x,y)
-		int N // Nr of steps in sampler
-		)
-	{	
-	int dim=a.size; double V=1;
-	for(int i=0;i<dim;i++)V*=b[i]-a[i];
-	double sum=0, sum2=0;
-	
-	var x=new vector(dim);
-	for(int i=0;i<N;i++){
-		Random RAND10 = new Random();
-		for(int k=0;k<dim;k++)x[k]=a[k]+RAND10.Next(1)*(b[k]-a[k]);
-		double fx=f(x); sum+=fx; sum2+=fx*fx;
-	}
-	double mean=sum/N, sigma=Sqrt(sum2/N-mean*mean);
-	
-	double integral = mean*V;
-	double error    = sigma*V/Sqrt(N);
-	var result = (integral, error);
-	return result;
-}//plainMC
-}//MonteCarlo
-
 public class main{
 public static void Main(){
 	Error.WriteLine("------------Part A--------------");
@@ -57,13 +29,14 @@ public static void Main(){
 		double x = (double)v[0];
 		double y = (double)v[1];
 		double z = (double)v[2];
-		return 1/(1-Cos(x)*Cos(y)*Cos(z));};
+		return 1/(PI*PI*PI)/(1-Cos(x)*Cos(y)*Cos(z));};
 	
-	Error.WriteLine("Calculating singular integral [1-cos(x)cos(y)cos(z)]^-1");
+	Error.WriteLine("Calculating singular integral 1/(PI^3)* [1-cos(x)cos(y)cos(z)]^-1");
 	var st = new double[]{0,0,0};
 	var en = new double[]{PI,PI,PI};
 	var res = MC.plainMC(fun1,st,en,1000000);
-	Error.WriteLine($"integral = {res}");
+	Error.WriteLine($"integral = {res.Item1}, error={res.Item2}");
+	Error.WriteLine($"should return 1.393");
 }//Main
 
 

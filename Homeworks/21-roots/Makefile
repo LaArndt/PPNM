@@ -8,12 +8,11 @@ all: out.txt data.txt
 out.txt data.txt:main.exe
 	$(RUN) $< 2> out.txt 1> data.txt 
 
-main.exe:main.cs matrix.dll integrate.dll
-	$(CSC) -target:exe -reference:matrix.dll -reference:integrate.dll $<
+main.exe:main.cs matrix.dll QR.dll
+	$(CSC) -target:exe -reference:matrix.dll -reference:QR.dll $<
 
-
-integrate.dll:../19-quadratures/quadrature.cs
-	mcs -target:library -out:./$@ $^
+QR.dll:../13-lineq/QRregs.cs
+	mcs -target:library -reference:matrix.dll -out:./$@ $^
 
 LIBDIR= ../../matlib
 matrix.dll:\
