@@ -1,0 +1,3 @@
+exercise on integration, test of integration routine found below:
+int[0,1] ln(x)/sqrt(x)=-4.0000002807059, ncalls=248
+Implementation of error function can be seen in corresponding plot

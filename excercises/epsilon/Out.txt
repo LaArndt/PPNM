@@ -1,0 +1,18 @@
+max_int = 2147483647
+
+min_int = -2147483648
+
+Machine epsilon for float: 1.192093E-07
+Must be about 1.19209289550781E-07
+Machine epsilon for double: 2.22044604925031E-16
+Must be about 2.22044604925031E-16
+
+sumA-1 = 0.000000e+000 should be 1.110223e-010
+sumB-1 = 1.110223e-010 should be 1.110223e-010
+
+Abs(a-b): 9.99999971718069E-10
+(Abs(a-b)/(Abs(a)+Abs(b))): 4.99999986109034E-10
+approx(1, 1+1e-9) = True should be True
+Abs(a-b): 1
+(Abs(a-b)/(Abs(a)+Abs(b))): 0.333333333333333
+approx(1, 2) = False should be False

@@ -1,0 +1,5 @@
+Test of mathematical functions:
+sqrt(2)=1.4142135623731
+sqrt(2)^2 should be 2=2
+e^pi=23.1406926327793
+for n=7, n^e = 198.250661655747
