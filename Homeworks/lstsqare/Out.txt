@@ -1,0 +1,23 @@
+
+
+Making least squares fit based on the decay of ThX
+Part A: Fit using logarithmic fit ln(y) = ln(a)-bt
+
+
+fit results
+
+c0=4.95112516950657 c1=-0.172070796448846
+t½=4.0274120553979 days, reference value: 3.36 days
+
+Part B: Implemented Uncertainties of fits and covariance matrix
+
+nuncertainty of fit:
+ c0_err = 0.0317252840715503, c1_err = 0.00402918677701613
+
+covariance matrix
+   0.00101  -0.000108 
+ -0.000108   1.62e-05 
+
+Part C: 
+ modified fit as f=a+err+(b+err)*x and f=a-err+(b-err)*x 
+ see plot for results

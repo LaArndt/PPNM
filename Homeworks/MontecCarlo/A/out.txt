@@ -1,0 +1,7 @@
+------------Part A--------------
+Wikipieda example
+int(x[11,14],y[7,10]) x^2+4y=1718.80597965832, error=0.197398596173059
+2771.86699856116 0.482176681897654
+Calculating singular integral 1/(PI^3)* [1-cos(x)cos(y)cos(z)]^-1
+integral = 1.41779332167062, error=0.0412948395039346
+should return 1.393

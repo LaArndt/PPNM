@@ -1,0 +1,11 @@
+set terminal pdf
+set output "erf.pdf"
+set size 6
+set key out 
+set tics out
+set xlabel "$z$"
+set ylabel "$int(erf)$" 
+set grid
+set title "integrated errorfunction"
+plot\
+"data.txt" index 0 using 1:2 with lines \

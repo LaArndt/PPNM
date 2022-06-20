@@ -1,0 +1,10 @@
+
+////// Part B /////
+testing of dr and rmax convergence can be found in 
+ dr.pdf and rmax.pdf respectively
+dr test finished
+rmax test finished
+constructing/solving hamiltonian for hydrogen 
+ see eigen.pdf for result
+eigenfunctions determined
+Comparing with analytical functions

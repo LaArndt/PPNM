@@ -1,9 +1,0 @@
-
-
-fit results
-
-c0=4.95112516950657 c1=-0.172070796448846
-t½=4.0274120553979 days, reference value: 3.36 days
-
-uncertainty of fit:
- c0_err = 0.0317252840715503, c1_err = 0.00402918677701613
