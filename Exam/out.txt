@@ -1,0 +1,6 @@
+#######################Output##############################
+#Made berrut interpolant based both on the B1 and B2 methods described in the lectures
+ Current test based on the sine function in the range of roughly 2PI
+#test of berrut B1 method for z=5.2, h=-0.943885972632165
+#test of berrut B2 method for z=5.2, h=-0.917570095873632
+test of split berrut for z=5.2, h=-0.919935195385188

@@ -11,7 +11,10 @@ class main{
 		u.print("u=");
 		vec v=new vec(1,2,3);
 		v.print("v=");
-
+		
+		WriteLine("vectors can also be cast to strings");
+		WriteLine($"u= {u.ToString()}");
+		
 		WriteLine("\nby operator overloading they may be added, multiplied etc.");
 		(u+v).print("u+v =");
 		var w=3*u-v;
@@ -28,8 +31,15 @@ class main{
 		
 		WriteLine("\nlikewise the cross-product");
 		vec k = A.cross(B);
-		k.print("AxB=");
+		k.print("AxB=k=");
+		WriteLine($"and Norm, |k| = {k.norm()}");	
+		
 
+		WriteLine("\nit is possible to compare two vectors");
+		WriteLine($" v = u ({u.approx(v)})\n u = u ({u.approx(u)})");
+		
+
+		
 
 	}
 

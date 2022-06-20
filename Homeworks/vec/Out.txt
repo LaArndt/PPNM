@@ -3,6 +3,8 @@ I've made a 3d-vector class vec(x,y,b)
 here are some
 u=100 200 300
 v=1 2 3
+vectors can also be cast to strings
+u= 100 200 300
 
 by operator overloading they may be added, multiplied etc.
 u+v =101 202 303
@@ -14,4 +16,9 @@ B=3 -6 9
 A*B=36
 
 likewise the cross-product
-AxB=72 -54 -24
+AxB=k=72 -54 -24
+and Norm, |k| = 93.1450481775601
+
+it is possible to compare two vectors
+ v = u (False)
+ u = u (True)
