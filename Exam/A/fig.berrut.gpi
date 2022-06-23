@@ -8,7 +8,7 @@ set ylabel "$y$" rotate 90
 set mtics 1
 set grid
 set title "Berrut Interpolation"
-plot[-6:6][-1.5:1.5]\
+plot[-6:6]\
  "data.txt" index 0 using 1:2 with points title "Sine"\
 ,"data.txt" index 0 using 1:3 with points title "func"\
  ,"data.txt" index 1 using 1:2 with lines title "B1 sin"\

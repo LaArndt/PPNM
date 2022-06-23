@@ -33,7 +33,7 @@ public class main{
 	
 	Error.WriteLine("#######################Output##############################");	
 	Error.WriteLine("#Made berrut interpolant based both on the B1 and B2 methods described in the lectures"); 
-	Error.WriteLine(" Current test based on the sine function in the range of roughly 2PI");
+	Error.WriteLine(" Current test based on functions sin(x) and x^2, see interp.pdf for results.");
 	
 
 	double step = 1.0/8;
@@ -41,7 +41,7 @@ public class main{
 	
 	WriteLine("\n\n#Berrut B1 spline data");
 	double test = berrut.B1(xs,ys,5.2);
-	Error.WriteLine($"#test of berrut B1 method for z=5.2, h={test}");	
+	Error.WriteLine($"#test of berrut B1 method for sin(x) at z=5.2, h={test}");	
 	for(double z=a+1e-9;z<=b;z+=step){
 		double h = berrut.B1(xs,ys,z);
 		double h2  = berrut.B1(xs,y2s,z);
@@ -52,7 +52,7 @@ public class main{
 
 
 	double test2 = berrut.B2(xs,ys,5.2);
-	Error.WriteLine($"#test of berrut B2 method for z=5.2, h={test2}");
+	Error.WriteLine($"#test of berrut B2 method forsin(x) at z=5.2, h={test2}");
 	WriteLine("\n\n#Berrut B2 data");
 	for(double z=a+1e-9;z<=b;z+=step){
 		double h = berrut.B2(xs,ys,z);
@@ -62,7 +62,7 @@ public class main{
 
 
 	double test3 = berrut.B_split(xs,ys,5.2);
-	Error.WriteLine($"test of split berrut for z=5.2, h={test3}");
+	Error.WriteLine($"test of split berrut for sin(x) at z=5.2, h={test3}");
 	 WriteLine("\n\n#Berrut Bsplit data");
         for(double z=a+1e-9;z<=b;z+=step){
                 double h = berrut.B_split(xs,ys,z);

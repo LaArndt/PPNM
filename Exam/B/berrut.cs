@@ -87,19 +87,42 @@ public class berrut{
 		if(method=="B2"){ev += B2(xs,ys,z);}
 		return ev;
 	}//Eval
-	public double deriv(double z){
-		int i = binsearch(zs,z);
-		double dx = z-zs[i];
-		double dy = eval(z)-hs[i];
-		/*
-		for(int j=0;j<zs.Length;j++){
-			double dx = z-zs[i];
+	public double deriv(double z, double step=1e-6){
 		
+		double dx = step;
+		double dy = eval(z+dx)-eval(z);
+		return dy/dx;
 		
-		}*/
-		
-		return dy/dx; 
+	}// deriv, single point
+
+	public (double[],double[]) deriv(){
+		int n = zs.Length;
+		// 1th order //
+		double[] d1x = new double[n];
+		double[] d1y = new double[n];
+		for(int i=0;i<n;i++){
+			d1x[i] = zs[i];
+			d1y[i] = deriv(zs[i]);
+		}
+		return (d1x,d1y);
+	}// deriv entire spline
 	
+	
+	public (double[],double[]) integ(){
+		//trapeziodal integration
+		int n = zs.Length;
+		double[] X = new double[n-1];
+		double[] F = new double[n-1];
+		double Int = 0;
+		for(int i=1;i<n;i++){
+			double f = (eval(zs[i])+eval(zs[i-1]))/2;
+			double x = zs[i]-zs[i-1];
+			double I = f*x;
+			Int += I;
+			F[i-1] = Int;
+			X[i-1] = zs[i];
+		}
+		return (X,F);
 	}
 
 

@@ -3,10 +3,9 @@ using static System.Console;
 using static System.Math;
 
 public class main{
-	
+	public static double step_func(double x){ if(x<0)return 0; else return 1;}
 	public static void Main(){
-	Error.WriteLine("Class implementation of the berrut spline \nObject stores original function aswell as spline allowing for easy differentaion and integration. Differantation and integration are computed using two-point numerics, \nhigher order differentials are achieved by constructing a new object spline based on the derivatives. Runge effects do not remain supressed when taking higher order differentials");	
-	Error.WriteLine("\nResults can be seen for the gaussian and step function in gauss.pdf and step.pdf respectively.");
+	Error.WriteLine("Class implementation of the berrut spline \nObject stores original function aswell as spline allowing for easy differentaion and integration \nhigher order differentials are achieved by constructing a new object spline based on the derivatives. Runge effects do not remain supressed when taking higher order differentials");	
 	// Class based implementation of the Berrut spline //
 	
 	// making x,y data //
@@ -20,8 +19,8 @@ public class main{
 	WriteLine("#function data: x, y");
 	for(int i=0;i<nsteps;i++){
 		xs[i] = a+i*stepsize;
-		ys[i] = 1.0/(1.0+xs[i]*xs[i]);
-
+		ys[i] = step_func(xs[i]);
+		
 		WriteLine($"{xs[i]} {ys[i]}");
 	}
 	
@@ -50,7 +49,22 @@ public class main{
 	for(int i=1;i<n_ratio*nsteps;i++){
 		WriteLine($"{B1.deriv().Item1[i]} {B1.deriv().Item2[i]} {B2.deriv().Item2[i]}");
 	}
+
+	// Integral // 
+	WriteLine("\n\n#Integral Data: x,y");
 	
+	(double[] X, double[] F) = B1.integ();
+	
+	for(int i=1;i<n_ratio*nsteps-1;i++){
+		WriteLine($"{X[i]} {F[i]}");
+	}
+
+
+
+
+
+
+/*	
 	// second derivatives //
 	WriteLine("\n\n#2derivatives: x, y");
 
@@ -68,14 +82,9 @@ public class main{
 	for(int i=1;i<n_ratio*nsteps;i++){
 		WriteLine($"{d3x[i]} {d3y[i]}");
 	}
-
+*/
 	 
-	// INTEGRAL //	
-	WriteLine("\n\n#integ");
-	(double[] X,double[] F) = B1.integ();
-	for(int i=1;i<n_ratio*nsteps-1;i++){
-		WriteLine($"{X[i]} {F[i]}");
-	}
+
 
 
 

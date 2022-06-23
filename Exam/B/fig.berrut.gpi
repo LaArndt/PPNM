@@ -1,5 +1,5 @@
 set terminal pdf
-set output "berrut_interp.pdf"
+set output "gauss.pdf"
 set size 6
 set key out
 set tics out
@@ -8,9 +8,12 @@ set ylabel "$y$" rotate 90
 set mtics 1
 set grid
 set title "Berrut Interpolation"
-plot[-6:6][-1.5:1.5]\
- "data.txt" index 0 using 1:2 with points title "Sine"\
+plot[-6:6][-3:3]\
+ "data.txt" index 0 using 1:2 with points title "function"\
  ,"data.txt" index 1 using 1:2 with lines title "B1"\
  ,"data.txt" index 1 using 1:3 with lines title "B2"\
  ,"data.txt" index 2 using 1:2 with lines title "deriv B1"\
  ,"data.txt" index 2 using 1:3 with lines title "deriv B2"\
+ ,"data.txt" index 3 using 1:2 with lines title "2deriv B1"\
+ ,"data.txt" index 4 using 1:2 with lines title "3deriv B1"\
+ ,"data.txt" index 5 using 1:2 with lines title "B1 integ"

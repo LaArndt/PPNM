@@ -1,0 +1,17 @@
+set terminal pdf
+set output "step.pdf"
+set size 6
+set key out
+set tics out
+set xlabel "$x$"
+set ylabel "$y$" rotate 90
+set mtics 1
+set grid
+set title "Berrut Interpolation"
+plot[-6:6]\
+ "data_step.txt" index 0 using 1:2 with points title "function"\
+ ,"data_step.txt" index 1 using 1:2 with lines title "B1"\
+ ,"data_step.txt" index 1 using 1:3 with lines title "B2"\
+ ,"data_step.txt" index 2 using 1:2 with lines title "deriv B1"\
+ ,"data_step.txt" index 2 using 1:3 with lines title "deriv B2"\
+ ,"data_step.txt" index 3 using 1:2 with lines title "Integral B1"\
