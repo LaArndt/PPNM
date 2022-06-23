@@ -8,8 +8,8 @@ set ylabel "$power$"
 set grid
 set title "ODE-solutions"
 plot\
-"data.txt" index 0 using 1:2:3 with lines title "do-theta"\
-,"data.txt" index 0 using 1:3 with lines title "do-omega"\
+"data.txt" index 0 using 1:2:3 with lines title "theta(t)"\
+,"data.txt" index 0 using 1:3 with lines title "omega(t)"\
 ,"data.txt" index 1 using 1:2 with lines linetype 2 title "sin1"\
 ,"data.txt" index 1 using 1:3 with lines linetype 2 title "sin2"\
 #,"data.txt" index 2 using 1:2 with lines lt 5 title "cos1"\

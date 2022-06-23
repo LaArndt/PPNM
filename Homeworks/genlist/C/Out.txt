@@ -1,5 +1,5 @@
 testing list nodes
-0
-3
-9
-15
+node = 0 item = 0
+node = 1 item = 3
+node = 2 item = 9
+node = 3 item = 15

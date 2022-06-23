@@ -9,8 +9,10 @@ public static void Main(){
 	a.push(9);
 	a.push(15);
 	WriteLine("testing list nodes");
+	double nd = 0;
 	for(a.start();a.current!=null;a.next()){
-		WriteLine(a.current.item);
+		WriteLine($"node = {nd} item = {a.current.item}");
+		nd++;
 
 	}
 

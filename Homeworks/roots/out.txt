@@ -1,6 +1,0 @@
-test1
-test2
-test3
-roots of 1d function x^2-3x are -8.17614236457109E-21 and 3 (0,3) expected
-roots of function x^2+2y+8xy are -0.25 & 0.0625 
- inserted into the expression this returns (-0.25)^2+2*0.0625+8*(-0.25)*0.0625=0.0625

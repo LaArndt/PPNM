@@ -13,7 +13,7 @@ Out.txt data.txt:main.exe
 main.exe:main.cs matrix.dll QRregs.dll lstsquare.dll
 	$(CSC) -target:exe -reference:matrix.dll -reference:QRregs.dll -reference:lstsquare.dll $<
 
-QRregs.dll:../13-lineq/QRregs.cs
+QRregs.dll:../lineq/QRregs.cs
 	mcs -target:library -reference:matrix.dll -out:./$@ $^
 
 lstsquare.dll:lstsquare.cs

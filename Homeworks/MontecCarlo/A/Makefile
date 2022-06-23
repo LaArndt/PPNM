@@ -14,7 +14,7 @@ main.exe:main.cs matrix.dll integrate.dll mc.dll
 mc.dll:mc.cs integrate.dll matrix.dll
 	mcs -target:library -reference:matrix.dll -reference:integrate.dll $<
 
-integrate.dll:../../19-quadratures/quadrature.cs
+integrate.dll:../../quadratures/quadrature.cs
 	mcs -target:library -out:./$@ $^
 
 LIBDIR= ../../../matlib

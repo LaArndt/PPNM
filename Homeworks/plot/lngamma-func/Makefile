@@ -20,6 +20,9 @@ gamma.data.txt: main.exe
 main.exe: main.cs cmath.dll
 	mcs -target:exe -reference:cmath.dll -out:$@ $<
 
-cmath.dll: 
+
+cmath.dll:cmath.cs complex.cs
 	mcs -target:library -out:./cmath.dll $^
 
+clean:
+	rm *.gpi *.pdf *.exe *.dll

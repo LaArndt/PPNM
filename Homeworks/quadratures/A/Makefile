@@ -1,4 +1,4 @@
-all: out.txt data.txt erf.pdf
+all: out.txt 
 	cat out.txt
 
 erf.pdf:fig.erf.gpi
