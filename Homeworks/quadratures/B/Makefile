@@ -1,8 +1,5 @@
-all: out.txt erf.pdf
+all: out.txt 
 	cat out.txt
-
-erf.pdf:fig.erf.gpi
-	pyxplot $<
 
 out.txt:main.exe
 	mono $< 2> out.txt

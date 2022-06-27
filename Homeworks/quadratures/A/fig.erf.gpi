@@ -8,4 +8,4 @@ set ylabel "$int(erf)$"
 set grid
 set title "integrated errorfunction"
 plot\
-"data.txt" index 0 using 1:2 with lines \
+"data.txt" index 0 using 1:2 with lines title "IntErf"\

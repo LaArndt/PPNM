@@ -1,5 +1,0 @@
-Class implementation of the berrut spline 
-Object stores original function aswell as spline allowing for easy differentaion and integration. Differantation and integration are computed using two-point numerics, 
-higher order differentials are achieved by constructing a new object spline based on the derivatives. Runge effects do not remain supressed when taking higher order differentials
-
-Results can be seen for the gaussian and step function in gauss.pdf and step.pdf respectively.
