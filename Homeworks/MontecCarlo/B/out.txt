@@ -1,7 +1,7 @@
 ------------Part B--------------
  comparing pseudo-random MC integrator (A) with low-discrepeancy quasi-random MC integrator
 PR calculation of singular integral 1/(PI^3)* [1-cos(x)cos(y)cos(z)]^-1
-integral = 1.38207848605653, error=0.00490801822339376
+integral = 1.40697088670351, error=0.02952438871265
 should return 1.393
 QR calculation of singular integral 1/(PI^3)* [1-cos(x)cos(y)cos(z)]^-1
 integral = 1.38140566206628, error=0.000923025135373867

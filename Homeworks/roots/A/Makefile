@@ -11,10 +11,10 @@ out.txt data.txt:main.exe
 main.exe:main.cs matrix.dll QR.dll
 	$(CSC) -target:exe -reference:matrix.dll -reference:QR.dll $<
 
-QR.dll:../lineq/QRregs.cs
+QR.dll:../../lineq/QRregs.cs
 	mcs -target:library -reference:matrix.dll -out:./$@ $^
 
-LIBDIR= ../../matlib
+LIBDIR= ../../../matlib
 matrix.dll:\
 	$(LIBDIR)/matrix/matrix.cs \
 	$(LIBDIR)/matrix/vector.cs 
